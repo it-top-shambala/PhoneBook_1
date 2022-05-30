@@ -1,9 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
 using System.Transactions;
-
 namespace PhoneBook.App;
-
 public enum AttributeStruct
 {
     Guid,
@@ -14,7 +12,6 @@ public enum AttributeStruct
     Adress,
     Groups
 }
-
 public class PhoneBookItem
 {
     private string GuId { get; }
@@ -32,6 +29,16 @@ public class PhoneBookItem
         Addresses = new List<Address>();
         Groups = new List<string>();
     }
+    /// <summary>
+    /// Constructor which take Single item not List
+    /// </summary>
+    /// <param name="Id"></param>
+    /// <param name="firstName"></param>
+    /// <param name="lastName"></param>
+    /// <param name="patronymic"></param>
+    /// <param name="phones"></param>
+    /// <param name="addresses"></param>
+    /// <param name="groups"></param>
     public PhoneBookItem(string Id,string firstName, string lastName, string patronymic, Phone phones, Address addresses, string groups)
     {
         GuId = Id;
@@ -42,8 +49,31 @@ public class PhoneBookItem
         Addresses = new List<Address>() { addresses };
         Groups = new List<string>() { groups };
     }
+    /// <summary>
+    /// Constructor which take List as parametr
+    /// </summary>
+    /// <param name="guId"></param>
+    /// <param name="firstName"></param>
+    /// <param name="lastName"></param>
+    /// <param name="patronymic"></param>
+    /// <param name="phones"></param>
+    /// <param name="addresses"></param>
+    /// <param name="groups"></param>
+    public PhoneBookItem(string guId, string firstName, string lastName, string patronymic, List<Phone> phones, List<Address> addresses, List<string> groups)
+    {
+        GuId = guId;
+        FirstName = firstName;
+        LastName = lastName;
+        Patronymic = patronymic;
+        Phones = phones;
+        Addresses = addresses;
+        Groups = groups;
+    }
 
-    //construtor for the finde removing element => Equals will be compare id
+    /// <summary>
+    /// construtor for the find removing element => Equals will be compare id
+    /// </summary>
+    /// <param name="id"></param>
     public PhoneBookItem(string id)
     {
         GuId = id;
@@ -52,9 +82,12 @@ public class PhoneBookItem
         Groups = new List<string>();
     }
     
+    /// <summary>
+    /// Method for print All elements (include Lists)
+    /// </summary>
     public void Print()
     {
-        Console.WriteLine($"Id: {GuId + Environment.NewLine}Firstname: {FirstName + Environment.NewLine} Lastname: {LastName + Environment.NewLine} Patronymic {Patronymic + Environment.NewLine}");
+        Console.WriteLine($"{Environment.NewLine} Id: {GuId + Environment.NewLine}Firstname: {FirstName + Environment.NewLine} Lastname: {LastName + Environment.NewLine} Patronymic {Patronymic + Environment.NewLine}");
         Phones.ForEach((s) => s.Print());
         Addresses.ForEach((s) => s.Print());
         Groups.ForEach(s => Console.WriteLine($"Group {s}"));
@@ -66,12 +99,18 @@ public class PhoneBookItem
         if (asBookItem == null) return false;
         else return Equals(asBookItem);
     }
-    public bool Equals(PhoneBookItem obj)
+    private bool Equals(PhoneBookItem obj)
     {
         if (obj == null) return false;
         return this.GuId.Equals(obj.GuId);
     }
 
+    /// <summary>
+    /// Method for Find Element in different attribute
+    /// </summary>
+    /// <param name="attributeStruct">Struct for find needed attribute</param>
+    /// <param name="element">element type string</param>
+    /// <returns></returns>
     public bool IsContain(AttributeStruct attributeStruct,string element)
     {
         switch (attributeStruct)

@@ -16,7 +16,6 @@ namespace PhoneBook.App
         private static void Main()
         {
             List<PhoneBookItem> phoneBook = new List<PhoneBookItem>();
-
             for (int i = 0; i < 2; i++)
             {
                 Console.WriteLine("Enter firstname: ");
@@ -43,28 +42,26 @@ namespace PhoneBook.App
                     )
                 );
             }
-
             Console.WriteLine();
             foreach (var obj in phoneBook)
             {
                 Console.WriteLine();
                 obj.Print();
             }
-
             Console.WriteLine("Enter id to remove: ");
             string? id = Console.ReadLine();
+            //will be invoked method Equals!
             phoneBook.Remove(new PhoneBookItem(id));
  
             Console.WriteLine("New one: ");
-            
             foreach (var obj in phoneBook)
             {
                 Console.WriteLine();
                 obj.Print();
             }
-
-            PhoneBookItem phoneBookItem = phoneBook.Find(x => x.IsContain(AttributeStruct.Firstname, "Allaz"));
-
+            Console.WriteLine("Enter value to find object");
+            string ValueToFind = Console.ReadLine();
+            PhoneBookItem phoneBookItem = phoneBook.Find(x => x.IsContain(AttributeStruct.Firstname, ValueToFind));
             Console.WriteLine("Finding item: ");
             Console.WriteLine(phoneBookItem);
         }

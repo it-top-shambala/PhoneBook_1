@@ -13,6 +13,6 @@ public class Address
     }
     public void Print()
     {
-        Console.WriteLine($"Type: {Type + Environment.NewLine}  AddressBody: {AddressBody + Environment.NewLine}");
+        Console.WriteLine($"{Environment.NewLine} Type: {Type + Environment.NewLine}  AddressBody: {AddressBody + Environment.NewLine}");
     }
 }

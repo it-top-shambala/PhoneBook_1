@@ -15,6 +15,6 @@ public class Phone
 
     public void Print()
     {
-        Console.WriteLine($"Type: {Type + Environment.NewLine}  Number: {Number + Environment.NewLine}");
+        Console.WriteLine($"{Environment.NewLine} Type: {Type + Environment.NewLine}  Number: {Number + Environment.NewLine}");
     }
 }
