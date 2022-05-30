@@ -1,6 +1,7 @@
-﻿using System.Diagnostics;
-using System.Reflection.Metadata.Ecma335;
-using System.Transactions;
+﻿
+using System;
+using System.Collections.Generic;
+using System.Linq;
 namespace PhoneBook.App;
 public enum AttributeStruct
 {
@@ -39,9 +40,9 @@ public class PhoneBookItem
     /// <param name="phones"></param>
     /// <param name="addresses"></param>
     /// <param name="groups"></param>
-    public PhoneBookItem(string Id,string firstName, string lastName, string patronymic, Phone phones, Address addresses, string groups)
+    public PhoneBookItem(string firstName, string lastName, string patronymic, Phone phones, Address addresses, string groups)
     {
-        GuId = Id;
+        GuId = Guid.NewGuid().ToString("N");
         FirstName = firstName;
         LastName = lastName;
         Patronymic = patronymic;
@@ -59,9 +60,9 @@ public class PhoneBookItem
     /// <param name="phones"></param>
     /// <param name="addresses"></param>
     /// <param name="groups"></param>
-    public PhoneBookItem(string guId, string firstName, string lastName, string patronymic, List<Phone> phones, List<Address> addresses, List<string> groups)
+    public PhoneBookItem(string firstName, string lastName, string patronymic, List<Phone> phones, List<Address> addresses, List<string> groups)
     {
-        GuId = guId;
+        GuId = GuId = Guid.NewGuid().ToString("N");
         FirstName = firstName;
         LastName = lastName;
         Patronymic = patronymic;
@@ -87,7 +88,7 @@ public class PhoneBookItem
     /// </summary>
     public void Print()
     {
-        Console.WriteLine($"{Environment.NewLine} Id: {GuId + Environment.NewLine}Firstname: {FirstName + Environment.NewLine} Lastname: {LastName + Environment.NewLine} Patronymic {Patronymic + Environment.NewLine}");
+        Console.WriteLine($"{Environment.NewLine} Id: {GuId + Environment.NewLine} Firstname: {FirstName + Environment.NewLine} Lastname: {LastName + Environment.NewLine} Patronymic: {Patronymic + Environment.NewLine}");
         Phones.ForEach((s) => s.Print());
         Addresses.ForEach((s) => s.Print());
         Groups.ForEach(s => Console.WriteLine($"Group {s}"));
