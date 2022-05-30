@@ -1,7 +1,28 @@
-﻿namespace PhoneBook.App;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Phone
+namespace PhoneBook.App
 {
-    public string Type { get; set; }
-    public string Number { get; set; }
+    internal class Phone
+    {
+        public string Type { get; set; }
+        public string Number { get; set; }
+
+
+
+        public Phone(string type, string number)
+        {
+            Type = type;
+            Number = number;
+        }
+        public void Add(string type, string number)
+        {
+            this.Type = type;
+            this.Number = number;
+        }
+    }
+
 }
