@@ -31,6 +31,13 @@ namespace PhoneBook.App
             }
 
         }
+        /// <summary>
+        /// Поиск элемента в Телефонной книге
+        /// </summary>
+        /// <param name="phoneBook"></param>
+        /// <param name="element"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, int id)
         {
 
