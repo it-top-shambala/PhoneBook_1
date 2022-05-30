@@ -9,7 +9,10 @@ namespace PhoneBook.App
         /// Сортировка телефонной книги 
         /// </summary>
         /// <param name="phoneBook"></param>
-        /// <param name="id">0 - по FirstName; 1 - по LastName; 2 - по Patronymic</param>
+        /// <param name="id"> Параметр сортировки по какому полю : 
+        /// 0 - по FirstName; 
+        /// 1 - по LastName; 
+        /// 2 - по Patronymic: </param>
         public static void SortPhoneBook(ref List<PhoneBookItem> phoneBook, int id)
         {
             PhoneBookItem tempPhoneBookItem = new PhoneBookItem();
@@ -36,7 +39,7 @@ namespace PhoneBook.App
         /// </summary>
         /// <param name="phoneBook"></param>
         /// <param name="element"></param>
-        /// <param name="id"></param>
+        /// <param name="id">= 0 - </param>
         /// <returns></returns>
         public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, int id)
         {
@@ -80,10 +83,17 @@ namespace PhoneBook.App
             }
             return -1;
         }
+        /// <summary>
+        /// Удаление элемента телефонной книги
+        /// </summary>
+        /// <param name="phoneBook"></param>
+        /// <param name="element"></param>
+        /// <param name="id"></param>
         public static void Remove(List<PhoneBookItem> phoneBook, string element, int id)
         {
             int i = ElementSearch(phoneBook, element, id);
-            phoneBook.RemoveAt(i);
+            if (i!=-1) phoneBook.RemoveAt(i);
+                       
         }
 
         static void Main(string[] args)
@@ -118,8 +128,14 @@ namespace PhoneBook.App
                 Console.WriteLine();
             }
             Console.WriteLine(phoneBook.Count);
+            Remove(phoneBook, "1", 0);
+            Console.WriteLine("\n==============================================================================\n");
 
-
+            foreach (var item in phoneBook)
+            {
+                item.Print();
+                Console.WriteLine();
+            }
         }
     }
 }
