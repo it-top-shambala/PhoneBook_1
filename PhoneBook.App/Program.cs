@@ -21,9 +21,12 @@ namespace PhoneBook.App
 
             PrintPhoneBook(ref phoneBook);
 
-            DateDeletion(ref phoneBook);
+            //DateDeletion(ref phoneBook);
 
-            PrintPhoneBook(ref phoneBook);
+            //PrintPhoneBook(ref phoneBook);
+
+            SearchBuField(ref phoneBook);
+
         }
 
         /// <summary>
@@ -38,6 +41,7 @@ namespace PhoneBook.App
                 phoneBook[i].PrintPhoneBookItem();
             }
         }
+
         /// <summary>
         /// Удаление данных по выбору
         /// </summary>
@@ -137,8 +141,134 @@ namespace PhoneBook.App
                         }
                     }
                     break;
+                default:
+                    Console.WriteLine("Неправельный ввод");
+                    break;
                     
             }
         }
+
+        /// <summary>
+        /// Поиск по выбранному значению
+        /// </summary>
+        /// <param name="phoneBook">Телефонная книга</param>
+        public static void SearchBuField(ref List<PhoneBookItem> phoneBook)
+        {
+            Console.WriteLine("Выберете по какому значению будет осуществлятся поиск");
+            Console.WriteLine("1 - Фамилия");
+            Console.WriteLine("2 - Имя");
+            Console.WriteLine("3 - Отчество");
+            Console.WriteLine("4 - номер телефона");
+            Console.WriteLine("5 - Адрес");
+
+            int search;
+            int.TryParse(Console.ReadLine(), out search);
+
+            switch(search)
+            {
+                case 1:
+                    Console.Write("Фамилия: ");
+                    string? firstName = Console.ReadLine();
+
+                    if(firstName == null)
+                    {
+                        Console.WriteLine("Фамилия не введена");
+                        return;
+                    }
+
+                    for(int i = 0; i < phoneBook.Count(); ++i)
+                    {
+                        if(firstName == phoneBook[i].FirstName)
+                        {
+                            phoneBook[i].PrintPhoneBookItem();
+                        }
+                    }
+                    break;
+                case 2:
+                    Console.Write("Имя: ");
+                    string? lastName = Console.ReadLine();
+
+                    if (lastName == null)
+                    {
+                        Console.WriteLine("Имя не введено");
+                        return;
+                    }
+
+                    for (int i = 0; i < phoneBook.Count(); ++i)
+                    {
+                        if (lastName == phoneBook[i].LastName)
+                        {
+                            phoneBook[i].PrintPhoneBookItem();
+                        }
+                    }
+                    break;
+                case 3:
+                    Console.Write("Отчество: ");
+                    string? patronymic = Console.ReadLine();
+
+                    if (patronymic == null)
+                    {
+                        Console.WriteLine("Отчество не введено");
+                        return;
+                    }
+
+                    for (int i = 0; i < phoneBook.Count(); ++i)
+                    {
+                        if (patronymic == phoneBook[i].Patronymic)
+                        {
+                            phoneBook[i].PrintPhoneBookItem();
+                        }
+                    }
+                    break;
+                case 4:
+                    Console.Write("Номер телефона: ");
+                    string? phoneNumber = Console.ReadLine();
+
+                    if (phoneNumber == null)
+                    {
+                        Console.WriteLine("Номер телефона не введен");
+                        return;
+                    }
+
+                    for (int i = 0; i < phoneBook.Count(); ++i)
+                    {
+                       for(int j = 0; j < phoneBook[i]._phones.Count(); ++j)
+                        {
+                            if (phoneNumber == phoneBook[i]._phones[j]._number)
+                            {
+                                phoneBook[i].PrintPhoneBookItem();
+                            }
+                        }
+                    }
+                    break;
+                case 5:
+                    Console.Write("Адрес:");
+                    string? address = Console.ReadLine();
+
+                    if (address == null)
+                    {
+                        Console.WriteLine("Адрес не введен");
+                        return;
+                    }
+
+                    for (int i = 0; i < phoneBook.Count(); ++i)
+                    {
+                        for (int j = 0; j < phoneBook[i]._addresses.Count(); ++j)
+                        {
+                            if (address == phoneBook[i]._addresses[j]._addressBody)
+                            {
+                                phoneBook[i].PrintPhoneBookItem();
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Неправельный выбор");
+                    break;
+            }
+        }
+        
+        
+        
     }
 }
