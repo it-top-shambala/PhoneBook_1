@@ -2,9 +2,9 @@
 
 public class PhoneBookItem
 {
-    private string? FirstName { get; set; }
-    private string? LastName { get; set; }
-    private string? Patronymic { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public string? Patronymic { get; set; }
     public List<Phone> _phones;
     public List<Address> _addresses;
     public List<string> _groups;
