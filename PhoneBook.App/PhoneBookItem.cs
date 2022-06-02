@@ -2,17 +2,40 @@
 
 public class PhoneBookItem
 {
-    public string FirstName { get; set; }
+    public string FirstName
+    {
+        get;
+        set;
+    }
     public string LastName { get; set; }
     public string Patronymic { get; set; }
-    public List<Phone> Phones { get; set; }
-    public List<Address> Addresses { get; set; }
-    public List<string> Groups { get; set; }
+    public string Phones { get; set; }
 
-    public PhoneBookItem()
+
+    public PhoneBookItem(string FirstName, string LastName, string Patronymic, string Phones)
     {
-        Phones = new List<Phone>();
-        Addresses = new List<Address>();
-        Groups = new List<string>();
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.Patronymic = Patronymic;
+        this.Phones = Phones;
     }
+    public void Print()
+    {
+        Console.WriteLine($"{FirstName}, {LastName}, {Patronymic} : {Phones}");
+    }
+
+    public bool SearchElem(string info)
+    {
+        if (info == FirstName || info == LastName || info == Patronymic)
+            return true;
+        return false;
+    }
+
+    public bool SearchElem(string FirstName, string LastName)
+    {
+        if (this.FirstName == FirstName || this.LastName == LastName)
+            return true;
+        return false;
+    }
+
 }
