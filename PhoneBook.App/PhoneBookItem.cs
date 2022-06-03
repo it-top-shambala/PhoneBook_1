@@ -102,37 +102,6 @@ public class PhoneBookItem
     /// <returns></returns>
     public bool IsContain(AttributeEnum attributeStruct,string element)
     {
-        /*switch (attributeStruct)
-        {
-            case AttributeEnum.Guid:
-                if (GuId == element) return true; 
-                break; 
-            case AttributeEnum.Firstname:
-            { 
-                if (element == this.FirstName) return true;
-            }break;
-            case AttributeEnum.Lastname:
-            {
-                if (element == this.LastName) return true;
-            }break;
-            case AttributeEnum.Patronymic:
-            {
-                if (element == this.Patronymic) return true;
-            }break;
-            case AttributeEnum.Phone:
-            {
-                return Phones.Any(i => i.Number == element);
-            }break;
-            case AttributeEnum.Adress:
-            {
-                return Addresses.Any(i => i.AddressBody == element);
-            }break;
-            case AttributeEnum.Groups:
-            {
-                return Groups.Any(i => i == element);
-            }break;
-        }*/
-
         return attributeStruct switch
         {
             AttributeEnum.Guid => (GuId == element) ? true : false,
