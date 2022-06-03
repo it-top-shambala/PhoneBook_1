@@ -3,8 +3,10 @@ using PhoneBook.App;
 
 namespace PhoneBook.App
 {
+
     internal class Program
     {
+
         /// <summary>
         /// Сортировка телефонной книги 
         /// </summary>
@@ -40,7 +42,7 @@ namespace PhoneBook.App
         /// <param name="phoneBook"></param>
         /// <param name="element"></param>
         /// <param name="id">= 0 - </param>
-        /// <returns></returns>
+        /// <returns>Возвращает индекс элемента, если элемента нет -1</returns>
         public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, int id)
         {
 
@@ -105,17 +107,17 @@ namespace PhoneBook.App
             for (int i = 0; i < 10; i++)
             {
                 PhoneBookItem phoneBookItem1 = new PhoneBookItem();
-                phoneBookItem1.AddRand(i + 1);
+                PhoneBookConsole.AddRand(phoneBookItem1,i + 1);
                 phoneBook.Add(phoneBookItem1);
             }
             PhoneBookItem phoneBookItem = new PhoneBookItem();
-            phoneBookItem.AddConsole();
+            PhoneBookConsole.AddConsole(phoneBookItem);
             phoneBook.Add(phoneBookItem);
 
             Console.WriteLine("\n==============================================================================\n");
             foreach (var item in phoneBook)
             {
-                item.Print();
+                PhoneBookConsole.Print(item);
                 Console.WriteLine();
             }
             Console.WriteLine(phoneBook.Count);
@@ -124,16 +126,16 @@ namespace PhoneBook.App
 
             foreach (var item in phoneBook)
             {
-                item.Print();
+                PhoneBookConsole.Print(item);
                 Console.WriteLine();
             }
             Console.WriteLine(phoneBook.Count);
-            Remove(phoneBook, "1", 0);
+            Remove(phoneBook, "FirstName1", 0);
             Console.WriteLine("\n==============================================================================\n");
 
             foreach (var item in phoneBook)
             {
-                item.Print();
+                PhoneBookConsole.Print(item);
                 Console.WriteLine();
             }
         }
