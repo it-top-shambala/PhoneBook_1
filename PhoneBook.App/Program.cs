@@ -43,10 +43,10 @@ namespace PhoneBook.App
         /// <param name="element"></param>
         /// <param name="id">= 0 - </param>
         /// <returns>Возвращает индекс элемента, если элемента нет -1</returns>
-        public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, int id)
+        public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, PhoneBookElement id)
         {
 
-            switch (id)
+            switch (id.GetHashCode())
             {
                 case 0:
                     for (int i = 0; i < phoneBook.Count; i++) if (element.Equals(phoneBook[i].FirstName)) return i;
