@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhoneBook.App
 {
-    internal enum PhoneBookElement
+    internal enum PhoneBookElementType
     {
         FirstName,
         LastName,
