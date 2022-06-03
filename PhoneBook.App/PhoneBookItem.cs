@@ -3,16 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 namespace PhoneBook.App;
-public enum AttributeStruct
-{
-    Guid,
-    Firstname,
-    Lastname,
-    Patronymic,
-    Phone,
-    Adress,
-    Groups
-}
 public class PhoneBookItem
 {
     private string GuId { get; }
@@ -82,17 +72,6 @@ public class PhoneBookItem
         Addresses = new List<Address>();
         Groups = new List<string>();
     }
-    
-    /// <summary>
-    /// Method for print All elements (include Lists)
-    /// </summary>
-    public void Print()
-    {
-        Console.WriteLine($"{Environment.NewLine} Id: {GuId + Environment.NewLine} Firstname: {FirstName + Environment.NewLine} Lastname: {LastName + Environment.NewLine} Patronymic: {Patronymic + Environment.NewLine}");
-        Phones.ForEach((s) => s.Print());
-        Addresses.ForEach((s) => s.Print());
-        Groups.ForEach(s => Console.WriteLine($"Group {s}"));
-    }
     public override bool Equals(object obj)
     {
         if (obj == null) return false;
@@ -106,44 +85,64 @@ public class PhoneBookItem
         return this.GuId.Equals(obj.GuId);
     }
 
+    public override string ToString()
+    {
+        return $"{Environment.NewLine} " +
+               $"Id: {GuId + Environment.NewLine}" +
+               $" Firstname: {FirstName + Environment.NewLine}" +
+               $" Lastname: {LastName + Environment.NewLine}" +
+               $" Patronymic: {Patronymic + Environment.NewLine}";
+    }
+
     /// <summary>
     /// Method for Find Element in different attribute
     /// </summary>
     /// <param name="attributeStruct">Struct for find needed attribute</param>
     /// <param name="element">element type string</param>
     /// <returns></returns>
-    public bool IsContain(AttributeStruct attributeStruct,string element)
+    public bool IsContain(AttributeEnum attributeStruct,string element)
     {
-        switch (attributeStruct)
+        /*switch (attributeStruct)
         {
-            case AttributeStruct.Guid:
+            case AttributeEnum.Guid:
                 if (GuId == element) return true; 
                 break; 
-            case AttributeStruct.Firstname:
+            case AttributeEnum.Firstname:
             { 
                 if (element == this.FirstName) return true;
             }break;
-            case AttributeStruct.Lastname:
+            case AttributeEnum.Lastname:
             {
                 if (element == this.LastName) return true;
             }break;
-            case AttributeStruct.Patronymic:
+            case AttributeEnum.Patronymic:
             {
                 if (element == this.Patronymic) return true;
             }break;
-            case AttributeStruct.Phone:
+            case AttributeEnum.Phone:
             {
                 return Phones.Any(i => i.Number == element);
             }break;
-            case AttributeStruct.Adress:
+            case AttributeEnum.Adress:
             {
                 return Addresses.Any(i => i.AddressBody == element);
             }break;
-            case AttributeStruct.Groups:
+            case AttributeEnum.Groups:
             {
                 return Groups.Any(i => i == element);
             }break;
-        }
+        }*/
+
+        return attributeStruct switch
+        {
+            AttributeEnum.Guid => (GuId == element) ? true : false,
+            AttributeEnum.Firstname => (FirstName == element) ? true : false,
+            AttributeEnum.Lastname => (LastName == element) ? true : false,
+            AttributeEnum.Patronymic => (Patronymic == element) ? true : false,
+            AttributeEnum.Phone => Phones.Any(i => i.Number == element),
+            AttributeEnum.Adress => Addresses.Any(i => i.AddressBody == element),
+            AttributeEnum.Groups =>  Groups.Any(i => i == element),
+        };
         return false;
     }
 }

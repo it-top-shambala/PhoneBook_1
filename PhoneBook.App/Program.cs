@@ -47,27 +47,19 @@ namespace PhoneBook.App
                 );
             }
             Console.WriteLine();
-            foreach (var obj in phoneBook)
-            {
-                Console.WriteLine();
-                obj.Print();
-            }
+            ConsoleWrite.PrintToConsoleList(phoneBook);
             Console.WriteLine("Enter id to remove: ");
             string? id = Console.ReadLine();
             //will be invoked method Equals!
             phoneBook.Remove(new PhoneBookItem(id));
  
             Console.WriteLine("New one: ");
-            foreach (var obj in phoneBook)
-            {
-                Console.WriteLine();
-                obj.Print();
-            }
+            ConsoleWrite.PrintToConsoleList(phoneBook);
             Console.WriteLine("Enter value to find object");
             string? ValueToFind = Console.ReadLine();
-            PhoneBookItem findingItem = phoneBook.Find(x => x.IsContain(AttributeStruct.Firstname, ValueToFind));
+            PhoneBookItem findingItem = phoneBook.Find(x => x.IsContain(AttributeEnum.Firstname, ValueToFind));
             Console.WriteLine("Finding item: ");
-            findingItem.Print();
+            ConsoleWrite.PrintToConsolePhoneItem(findingItem);
         }
     }
 }

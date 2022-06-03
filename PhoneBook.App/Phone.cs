@@ -13,9 +13,10 @@ public class Phone
         Type = type;
         Number = number;
     }
-
-    public void Print()
+    public override string ToString()
     {
-        Console.WriteLine($"{Environment.NewLine} Type: {Type + Environment.NewLine}  Number: {Number + Environment.NewLine}");
+        return $"{Environment.NewLine} " +
+               $"Type: {Type + Environment.NewLine}" +
+               $"Number: {Number + Environment.NewLine}";
     }
 }

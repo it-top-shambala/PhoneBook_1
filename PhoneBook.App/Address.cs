@@ -11,8 +11,11 @@ public class Address
         Type = type;
         AddressBody = addressBody;
     }
-    public void Print()
+    public override string ToString()
     {
-        Console.WriteLine($"{Environment.NewLine} Type: {Type + Environment.NewLine}  AddressBody: {AddressBody + Environment.NewLine}");
+        return
+            $"{Environment.NewLine}" +
+            $"Type: {Type + Environment.NewLine}" +
+            $"AddressBody: {AddressBody + Environment.NewLine}";
     }
 }
