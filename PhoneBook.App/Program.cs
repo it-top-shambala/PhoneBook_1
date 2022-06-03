@@ -91,7 +91,7 @@ namespace PhoneBook.App
         /// <param name="phoneBook"></param>
         /// <param name="element"></param>
         /// <param name="id"></param>
-        public static void Remove(List<PhoneBookItem> phoneBook, string element, int id)
+        public static void Remove(List<PhoneBookItem> phoneBook, string element, PhoneBookElementType id)
         {
             int i = ElementSearch(phoneBook, element, id);
             if (i!=-1) phoneBook.RemoveAt(i);
@@ -130,7 +130,7 @@ namespace PhoneBook.App
                 Console.WriteLine();
             }
             Console.WriteLine(phoneBook.Count);
-            Remove(phoneBook, "FirstName1", 0);
+            Remove(phoneBook, "FirstName1", PhoneBookElementType.FirstName);
             Console.WriteLine("\n==============================================================================\n");
 
             foreach (var item in phoneBook)
