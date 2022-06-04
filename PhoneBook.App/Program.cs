@@ -38,7 +38,7 @@ namespace PhoneBook.App
 
             for(int i = 0; i < phoneBook.Count; i++)
             {
-                phoneBook[i].PrintPhoneBookItem();
+                PhoneBookConsole.PrintPhoneBookItem(phoneBook[i]);
             }
         }
 
@@ -180,7 +180,7 @@ namespace PhoneBook.App
                     {
                         if(firstName == phoneBook[i].FirstName)
                         {
-                            phoneBook[i].PrintPhoneBookItem();
+                            PhoneBookConsole.PrintPhoneBookItem(phoneBook[i]);
                         }
                     }
                     break;
@@ -198,7 +198,7 @@ namespace PhoneBook.App
                     {
                         if (lastName == phoneBook[i].LastName)
                         {
-                            phoneBook[i].PrintPhoneBookItem();
+                            PhoneBookConsole.PrintPhoneBookItem(phoneBook[i]);
                         }
                     }
                     break;
@@ -216,7 +216,7 @@ namespace PhoneBook.App
                     {
                         if (patronymic == phoneBook[i].Patronymic)
                         {
-                            phoneBook[i].PrintPhoneBookItem();
+                            PhoneBookConsole.PrintPhoneBookItem(phoneBook[i]);
                         }
                     }
                     break;
@@ -236,7 +236,7 @@ namespace PhoneBook.App
                         {
                             if (phoneNumber == phoneBook[i]._phones[j]._number)
                             {
-                                phoneBook[i].PrintPhoneBookItem();
+                                PhoneBookConsole.PrintPhoneBookItem(phoneBook[i]);
                             }
                         }
                     }
@@ -257,7 +257,7 @@ namespace PhoneBook.App
                         {
                             if (address == phoneBook[i]._addresses[j]._addressBody)
                             {
-                                phoneBook[i].PrintPhoneBookItem();
+                                PhoneBookConsole.PrintPhoneBookItem(phoneBook[i]);
                             }
                         }
                     }

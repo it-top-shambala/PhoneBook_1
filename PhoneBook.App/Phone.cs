@@ -27,8 +27,4 @@ public class Phone
         }
     }
 
-    public void PrintPhone()
-    {
-        Console.WriteLine($"{_phoneType}:  {_number}");
-    }
 }

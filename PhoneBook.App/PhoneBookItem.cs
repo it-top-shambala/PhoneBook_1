@@ -39,20 +39,4 @@ public class PhoneBookItem
 
 
 
-   public void PrintPhoneBookItem()
-    {
-        Console.WriteLine($"{FirstName} {LastName} {Patronymic}");
-
-        for(int i = 0; i < _phones.Count; i++)
-        {
-            _phones[i].PrintPhone();
-            Console.WriteLine();
-
-            _addresses[i].PrintAddress();
-            Console.WriteLine();
-
-            Console.WriteLine($"{_groups[i]} ");
-        }
-      
-    }
 }

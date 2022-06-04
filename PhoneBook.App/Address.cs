@@ -18,8 +18,4 @@ public class Address
         this._addressBody = Console.ReadLine();
     }
 
-     public void PrintAddress()
-    {
-        Console.WriteLine($"{_addressBodyTape}:  {_addressBody}");
-    }
 }
