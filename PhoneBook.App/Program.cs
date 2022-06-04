@@ -21,10 +21,6 @@ namespace PhoneBook.App
 
             PrintPhoneBook(ref phoneBook);
 
-            //DateDeletion(ref phoneBook);
-
-            //PrintPhoneBook(ref phoneBook);
-
             SearchBuField(ref phoneBook);
 
         }

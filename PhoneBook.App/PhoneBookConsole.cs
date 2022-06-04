@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhoneBook.App
 {
-    internal static class PhoneBookConsole
+    internal class PhoneBookConsole
     {
         public static void PrintPhoneBookItem(PhoneBookItem phoneBook)
         {
@@ -32,8 +32,76 @@ namespace PhoneBook.App
 
         public static void PrintAddress(Address address)
         {
-            Console.WriteLine($"{address._addressBodyTape}:  {address._addressBody}");
+            Console.WriteLine($"{address._addressBodyType}:  {address._addressBody}");
         }
 
+        public static void DataAddition(ref PhoneBookItem phoneBookItem)
+        {
+            Console.Write("Фамилия: ");
+            phoneBookItem.FirstName = Console.ReadLine();
+
+            Console.Write("Имя: ");
+            phoneBookItem.LastName = Console.ReadLine();
+
+            Console.Write("Отчество: ");
+            phoneBookItem.Patronymic = Console.ReadLine();
+
+            ConsoleKeyInfo key;
+
+            do
+            {
+
+                Console.Write("Номер телефона: ");
+                string? phone = Console.ReadLine();
+                
+
+                Console.Write("Тип телефона:");
+                string? type = Console.ReadLine();
+                
+                phoneBookItem._phones.Add(new Phone(ref type, ref phone));
+
+                Console.WriteLine("Добавить ещё один номер телефона? Y/N");
+                key = Console.ReadKey();
+
+                Console.WriteLine();
+            } while (key.Key == ConsoleKey.Y);
+
+            do
+            {
+
+                Console.Write("Введите адрес: ");
+                string? address = Console.ReadLine();
+
+
+                Console.Write("Тип адреса:");
+                string? type = Console.ReadLine();
+
+                phoneBookItem._addresses.Add(new Address(ref type, ref address));
+
+                Console.WriteLine("Добавить ещё один адрес? Y/N");
+                key = Console.ReadKey();
+
+                Console.WriteLine();
+            } while (key.Key == ConsoleKey.Y);
+
+            do
+            {
+                Console.WriteLine("Введите группу : ");
+                phoneBookItem._groups.Add(Console.ReadLine());
+                Console.WriteLine("Добавить еще одину группу? Y/N");
+                key = Console.ReadKey();
+                Console.WriteLine();
+            } while (key.Key == ConsoleKey.Y);
+
+        }
+
+        public static void AddPhoneNumber(ref Phone phone)
+        {
+            Console.Write("Номер телефона: ");
+            phone._number = Console.ReadLine();
+
+            Console.Write("Тип телефона: ");
+            phone._phoneType = Console.ReadLine();
+        }
     }
 }

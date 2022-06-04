@@ -11,15 +11,14 @@ public class PhoneBookItem
 
     public PhoneBookItem()
     {
-        this.FirstName = null;
-        this.LastName = null;
-        this.Patronymic = null;
+        FirstName = null;
+        LastName = null;
+        Patronymic = null;
         _phones = new List<Phone>();
         _addresses = new List<Address>();
-        _groups = new List<string>();
-
-        
+        _groups = new List<string>();  
     }
+
 
 
 
