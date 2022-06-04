@@ -11,30 +11,14 @@ public class PhoneBookItem
 
     public PhoneBookItem()
     {
-        this.FirstName = Console.ReadLine();
-        this.LastName = Console.ReadLine();
-        this.Patronymic = Console.ReadLine();
+        this.FirstName = null;
+        this.LastName = null;
+        this.Patronymic = null;
         _phones = new List<Phone>();
         _addresses = new List<Address>();
         _groups = new List<string>();
 
-        _phones.Add(new Phone());
-
-        Console.WriteLine(" 1 - Legal 2 - physical");
-
-        int number = int.Parse(Console.ReadLine());
-
-        switch(number)
-        {
-            case 1:
-                _addresses.Add(new Address(Address.AddressBodyType.legal));
-                break;
-            case 2:
-                _addresses.Add(new Address(Address.AddressBodyType.physical));
-                break;
-        }
-
-        _groups.Add(Console.ReadLine());
+        
     }
 
 

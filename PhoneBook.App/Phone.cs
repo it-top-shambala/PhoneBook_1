@@ -4,7 +4,7 @@ public class Phone
 {
     //public string Type { get; set; }
     public string? _number;
-    public PhoneType? _phoneType = null;
+    public PhoneType? _phoneType;
 
     public enum PhoneType
     {
@@ -14,17 +14,8 @@ public class Phone
 
     public Phone()
     {
-        this._number = Console.ReadLine();
-        
-        if(_number != null)
-        if(_number[0] == '+' || _number[0] == '8')
-        {
-            this._phoneType = PhoneType.cell;
-        }
-        else
-        {
-            this._phoneType = PhoneType.home;
-        }
+        this._number = null;
+        this._phoneType = null;
     }
 
 }

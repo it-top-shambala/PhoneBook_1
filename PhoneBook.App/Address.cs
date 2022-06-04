@@ -12,10 +12,10 @@ public class Address
         physical
     }
 
-    public Address(AddressBodyType addressBodyType)
+    public Address()
     {
-        this._addressBodyTape = addressBodyType;
-        this._addressBody = Console.ReadLine();
+        this._addressBodyTape = null;
+        this._addressBody = null;
     }
 
 }
