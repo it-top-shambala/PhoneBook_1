@@ -1,0 +1,15 @@
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.exe
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.deps.json
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.runtimeconfig.json
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.dll
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.pdb
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.csproj.AssemblyReference.cache
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.AssemblyInfoInputs.cache
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.AssemblyInfo.cs
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.csproj.CoreCompileInputs.cache
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.dll
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\refint\PhoneBook.App.dll
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.pdb
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.genruntimeconfig.cache
+C:\Users\ELENA\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\ref\PhoneBook.App.dll
