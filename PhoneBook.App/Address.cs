@@ -1,7 +1,30 @@
-﻿namespace PhoneBook.App;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-public class Address
+namespace PhoneBook.App
 {
-    public string Type { get; set; }
-    public string AddressBody { get; set; }
+    class Address
+    {
+        public string Type { get; set; }
+        public string AddressBody { get; set; }
+        public void print()
+        {
+            Console.Write($"{Type}:{AddressBody}, ");
+        }
+        public static bool operator !=(Address left, Address right)
+        {
+            if (left.Type != right.Type || left.AddressBody != right.AddressBody)
+                return true;
+            else
+                return false;
+        }
+        public static bool operator ==(Address left, Address right)
+        {
+            if (left.Type == right.Type || left.AddressBody == right.AddressBody)
+                return true;
+            else
+                return false;
+        }
+    }
 }
