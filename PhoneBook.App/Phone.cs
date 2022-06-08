@@ -18,11 +18,7 @@ namespace PhoneBook.App
             Type = type;
             Number = number;
         }
-        public void Add(string type, string number)
-        {
-            this.Type = type;
-            this.Number = number;
-        }
+       
     }
 
 }

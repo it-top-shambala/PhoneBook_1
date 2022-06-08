@@ -53,24 +53,7 @@ namespace PhoneBook.App
                 Console.WriteLine();
             } while (key.Key == ConsoleKey.Y);
         }
-        /// <summary>
-        /// Автоматическое заполнение класса
-        /// </summary>
-        /// <param name="size">Номер в записи колекции</param>
-        public static void AddRand(PhoneBookItem phoneBook, int size)
-        {
-
-            phoneBook.FirstName = $"FirstName{size}";
-            phoneBook.LastName = $"LastName{size}";
-            phoneBook.Patronymic = $"Patronymic{size}";
-            phoneBook.Phones.Add(new Phone($"Type{size}", $"Phone{size}"));
-            phoneBook.Phones.Add(new Phone($"Type{size}+1", $"Phone{size}+1"));
-            phoneBook.Addresses.Add(new Addres($"type{size}", $"adres{size}"));
-            phoneBook.Addresses.Add(new Addres($"type{size}+1", $"adres{size}+1"));
-            phoneBook.Groups.Add($"Group{size}");
-            phoneBook.Groups.Add($"Group{size}+1");
-
-        }
+       
         /// <summary>
         /// Печать обекта класса
         /// </summary>
