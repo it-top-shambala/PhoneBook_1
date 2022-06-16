@@ -9,6 +9,7 @@ namespace PhoneBook.App
         static void Main(string[] args)
         {
 
+
             List<PhoneBookItem> phoneBook = new List<PhoneBookItem>();
 
 
@@ -45,7 +46,29 @@ namespace PhoneBook.App
             {
                 PhoneBookConsole.Print(item);
                 Console.WriteLine();
+
             }
+            PhoneBookFile.WritePhoneBookToFile(phoneBook, "book1.txt");
+            List<PhoneBookItem> phoneBook2 = new List<PhoneBookItem>();
+
+            try
+            {
+                phoneBook2 = PhoneBookFile.ReadFileToPhoneBook("book2.txt");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("FileNotFoundException");
+            }
+
+            Console.WriteLine("========phone book2==============");
+            foreach (var item in phoneBook2)
+            {
+                PhoneBookConsole.Print(item);
+                Console.WriteLine();
+
+            }
+
+
         }
     }
 }
