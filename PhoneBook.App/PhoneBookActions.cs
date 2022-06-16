@@ -45,18 +45,18 @@ namespace PhoneBook.App
             }
         }
 
-        public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, PhoneBookElementType id)
+        public static int ElementSearch(List<PhoneBookItem> phoneBook, string element, PhoneBookElementType typeElement)
         {
-            return id.GetHashCode() switch
+            return typeElement.ToString() switch
             {
-                0 => SearchFirstName(phoneBook, element),
-                1 => SearchLastName(phoneBook, element),
-                2 => SearchPatronymic(phoneBook, element),
-                3 => SearchPhonesNumber(phoneBook, element),
-                4 => SearchPhonesType(phoneBook, element),
-                5 => SearchAddressesType(phoneBook, element),
-                6 => SearchAddressesAddresBody(phoneBook, element),
-                7 => SearchGroups(phoneBook, element),
+                "FirstName" => SearchFirstName(phoneBook, element),
+                "LastName" => SearchLastName(phoneBook, element),
+                "Patronymic" => SearchPatronymic(phoneBook, element),
+                "PhonesNumber" => SearchPhonesNumber(phoneBook, element),
+                "PhonesType" => SearchPhonesType(phoneBook, element),
+                "AddressesType" => SearchAddressesType(phoneBook, element),
+                "AddressesAddresBody" => SearchAddressesAddresBody(phoneBook, element),
+                "Groups" => SearchGroups(phoneBook, element),
                 
             };         
         }
