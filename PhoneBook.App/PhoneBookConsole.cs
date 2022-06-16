@@ -53,10 +53,7 @@ namespace PhoneBook.App
                 Console.WriteLine();
             } while (key.Key == ConsoleKey.Y);
         }
-       
-        /// <summary>
-        /// Печать обекта класса
-        /// </summary>
+     
         public static void Print(PhoneBookItem phoneBook)
         {
             Console.WriteLine($"Фамилия {phoneBook.FirstName}\t" +
