@@ -1,6 +1,6 @@
 ﻿namespace PhoneBook.App
 {
-    //TODO Add unit testing to project
+    //TODO Add unit testing to project and seperate project to different projects 
     internal static class Program
     {
         public static readonly string FileName = "test.log";
