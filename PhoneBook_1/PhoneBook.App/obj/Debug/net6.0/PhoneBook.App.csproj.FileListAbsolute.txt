@@ -1,0 +1,15 @@
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.exe
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.deps.json
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.runtimeconfig.json
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.dll
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\ref\PhoneBook.App.dll
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\bin\Debug\net6.0\PhoneBook.App.pdb
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.csproj.AssemblyReference.cache
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.AssemblyInfoInputs.cache
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.AssemblyInfo.cs
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.csproj.CoreCompileInputs.cache
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.dll
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\ref\PhoneBook.App.dll
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.pdb
+C:\Users\Dima\source\repos\PhoneBook_1\PhoneBook.App\obj\Debug\net6.0\PhoneBook.App.genruntimeconfig.cache
