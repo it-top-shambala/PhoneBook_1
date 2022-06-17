@@ -2,17 +2,24 @@
 
 public class PhoneBookItem
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Patronymic { get; set; }
-    public List<Phone> Phones { get; set; }
-    public List<Address> Addresses { get; set; }
-    public List<string> Groups { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
+    public string? Patronymic { get; set; }
+    public List<Phone> _phones;
+    public List<Address> _addresses;
+    public List<string> _groups;
 
     public PhoneBookItem()
     {
-        Phones = new List<Phone>();
-        Addresses = new List<Address>();
-        Groups = new List<string>();
+        FirstName = null;
+        LastName = null;
+        Patronymic = null;
+        _phones = new List<Phone>();
+        _addresses = new List<Address>();
+        _groups = new List<string>();  
     }
+
+
+
+
 }
