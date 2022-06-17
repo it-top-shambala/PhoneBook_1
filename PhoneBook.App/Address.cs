@@ -1,7 +1,26 @@
-﻿namespace PhoneBook.App;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Address
+namespace PhoneBook.App
 {
-    public string Type { get; set; }
-    public string AddressBody { get; set; }
+    public class Address
+    {
+        public string Type { get; set; }
+        public string AddressType { get; set; }
+         public Address(string type, string addressType)
+
+         {
+              Type = type;
+              AddressType = addressType;
+         }
+        public override string ToString()
+        {
+            return $"\t{Type}: {AddressType}";
+        }
+    }
+       
+
 }
