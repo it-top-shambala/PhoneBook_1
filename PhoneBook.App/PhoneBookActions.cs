@@ -24,7 +24,7 @@ namespace PhoneBook.App
 
         }
         
-        public static void SortPhoneBook(ref List<PhoneBookItem> phoneBook, int id)
+        public static void SortPhoneBook(ref List<PhoneBookItem> phoneBook, PhoneBookElementType id)
         {
             PhoneBookItem tempPhoneBookItem = new PhoneBookItem();
 
@@ -32,9 +32,9 @@ namespace PhoneBook.App
             {
                 for (int j = i; j < phoneBook.Count; j++)
                 {
-                    if ((String.Compare(phoneBook[i].FirstName, phoneBook[j].FirstName, true) > 0 && id == 0) ||
-                        (String.Compare(phoneBook[i].LastName, phoneBook[j].LastName, true) > 0 && id == 1) ||
-                        (String.Compare(phoneBook[i].Patronymic, phoneBook[j].Patronymic, true) > 0 && id == 2))
+                    if ((String.Compare(phoneBook[i].FirstName, phoneBook[j].FirstName, true) > 0 && id.GetHashCode() == 0) ||
+                        (String.Compare(phoneBook[i].LastName, phoneBook[j].LastName, true) > 0 && id.GetHashCode() == 1) ||
+                        (String.Compare(phoneBook[i].Patronymic, phoneBook[j].Patronymic, true) > 0 && id.GetHashCode() == 2))
                     {
                         tempPhoneBookItem = (PhoneBookItem)phoneBook[i];
                         phoneBook[i] = phoneBook[j];

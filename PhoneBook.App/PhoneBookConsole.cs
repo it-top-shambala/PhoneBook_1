@@ -9,8 +9,9 @@ namespace PhoneBook.App
     internal static class PhoneBookConsole
     {
 
-        public static void AddConsole(PhoneBookItem phoneBook)
+        public static PhoneBookItem AddConsole()
         {
+            PhoneBookItem phoneBook = new PhoneBookItem();
             Console.Write("Введите имя абонента : ");
             phoneBook.FirstName = Console.ReadLine();
             Console.Write("Введите фамилию абонента : ");
@@ -52,6 +53,7 @@ namespace PhoneBook.App
                 key = Console.ReadKey();
                 Console.WriteLine();
             } while (key.Key == ConsoleKey.Y);
+            return phoneBook;
         }
      
         public static void Print(PhoneBookItem phoneBook)
